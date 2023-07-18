@@ -6,6 +6,7 @@
 * SCSS
 * JavaScript
 * Gulp
+* Swiper
 
 Код и файловая структура оформлены по методологии БЭМ(nested)
 
