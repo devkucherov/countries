@@ -13,6 +13,14 @@
   );
 }
 
+@mixin background-clip {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
 .slide {
   height: 100vh;
   overflow: hidden;
@@ -27,8 +35,31 @@
   background-repeat: no-repeat;
 
   background-position: center center;
-  background: var(--radial-bg), var(--linar-bg),
-    url('./../img/slider-bg/01.jpg');
+
+  &--norway {
+    background: var(--radial-bg), var(--linar-bg),
+      url('./../img/slider-bg/01.jpg');
+  }
+
+  &--austria {
+    background: var(--radial-bg), var(--linar-bg),
+      url('./../img/slider-bg/02.jpg');
+  }
+
+  &--uae {
+    background: var(--radial-bg), var(--linar-bg),
+      url('./../img/slider-bg/03.jpg');
+  }
+
+  &--thailand {
+    background: var(--radial-bg), var(--linar-bg),
+      url('./../img/slider-bg/04.jpg');
+  }
+
+  &--morocco {
+    background: var(--radial-bg), var(--linar-bg),
+      url('./../img/slider-bg/05.jpg');
+  }
 
   color: #fff;
 
@@ -53,13 +84,107 @@
 }
 
 .slide__header {
+  position: relative;
+  text-align: center;
 }
 
 .slide__tagline {
+  position: absolute;
+  top: -8px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 1.56vw;
+  line-height: 1.23;
+  letter-spacing: 0.55em;
+  color: rgba(255, 255, 255, 0.7);
+
+  @media (max-width: 767px) {
+    font-size: 3vw;
+  }
 }
 
 .slide__title {
+  font-size: 13vw;
+  font-weight: 700;
+  line-height: 1.22;
+
+  @media (max-width: 767px) {
+    font-size: 19vw;
+  }
+
+  span {
+    padding: 0 10px;
+  }
+
+  &--norway span {
+    background: linear-gradient(
+        47.06deg,
+        #051d27 -3.87%,
+        rgba(255, 255, 255, 0) 20.89%
+      ),
+      #ffffff;
+
+    @include background-clip;
+  }
+
+  &--austria span {
+    background: linear-gradient(
+        47.06deg,
+        #122127 -3.87%,
+        rgba(255, 255, 255, 0) 20.89%
+      ),
+      #ffffff;
+
+    @include background-clip;
+  }
+
+  &--uae span {
+    background: linear-gradient(
+        47.06deg,
+        #aa6621 -3.87%,
+        rgba(255, 255, 255, 0) 20.89%
+      ),
+      #ffffff;
+
+    @include background-clip;
+  }
+
+  &--thailand span {
+    background: linear-gradient(
+        47.06deg,
+        #2e7c88 -3.87%,
+        rgba(255, 255, 255, 0) 20.89%
+      ),
+      #ffffff;
+
+    @include background-clip;
+  }
+
+  &--morocco span {
+    background: linear-gradient(
+        47.06deg,
+        #BABFBF -3.87%,
+        rgba(255, 255, 255, 0) 20.89%
+      ),
+      #ffffff;
+
+    @include background-clip;
+  }
 }
 
 .slide__location {
+  display: flex;
+  column-gap: 30px;
+  width: 70%;
+  margin: 0 auto;
+
+  @media (max-width: 1023px) {
+    width: 90%;
+  }
+
+  @media (max-width: 767px) {
+    width: 90%;
+    flex-direction: column;
+    row-gap: 20px;
+  }
 }
